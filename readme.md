@@ -42,16 +42,39 @@ UCOZ_TOKEN_SECRET=
 ```
 
 ## Usage
+
+#### Instance
+You can instance directly and passing inicial config on constructor, or you can use `uAPI()` that use configs in 'config/ucoz-api.php'
 ```php
 $config = []; // overwrite inicial config from 'config/ucoz-api.php'
 // You can instace two ways:
-$uapi = new \EnnioSousa\uCozApi\uCozApi($config);
+$uapi = new \EnnioSousa\uCozApi\uCozApi($optional_config = []);
 // or
 $uapi = uAPI();
 ```
 
+#### Allowed methods
+The allowed methods are `get()`, `post()`, `put()` and `delete()`. You can use `getCached()`
 ```php
+$uapi->get('/my')->toArray();
 uAPI()->get('/my')->toArray();
+uAPI()->getCached('/my')->toArray();
 uAPI()->get('/my')->toJson();
 uAPI()->get('/my')->toObject();
+
+uAPI()->post('/blog', [
+    'category' => '1',
+    'title' => 'My blog post from API',
+    'description' => 'Lorem Ipsum',
+    'message' => 'Lorem Ipsum full'
+])->toString();
+```
+
+#### Data convertion
+You can use `toArray()`, `toJson()`, `toObject()`, `toString()`
+```
+$deleted =  uAPI()->delete('/blog', [
+    'id' => '1'
+]);
+echo "The delete feedback was: ($deleted)";
 ```

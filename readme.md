@@ -6,14 +6,15 @@ Unfortunately only Russian language. :(
 || Instuction|
 |---|---|
 | Documentation | http://api.ucoz.net/ru/manual |
-| To get uAPI credentials | http://api.ucoz.net/ru/join/reg |
+| Credentials | http://api.ucoz.net/ru/join/reg |
+| App manager and playground | http://uapi.ucoz.com |
 
 ## Instalation
 Install package via Composer
 ```bash
 composer require enniosousa/ucoz-api
 ```
-Next, if using Laravel 5, include the service provider within your `config/app.php` file.
+Next include the service provider within your `config/app.php` file.
 
 ```php
 'providers' => [
@@ -22,11 +23,6 @@ Next, if using Laravel 5, include the service provider within your `config/app.p
 ```
 
 Publishing config
-```bash
-php artisan vendor:publish --provider="EnnioSousa\uCozApi\uCozApiServiceProvider"
-```
-
-Environment Configuration
 ```bash
 php artisan vendor:publish --provider="EnnioSousa\uCozApi\uCozApiServiceProvider"
 ```
@@ -44,7 +40,7 @@ UCOZ_TOKEN_SECRET=
 ## Usage
 
 #### Instance
-You can instance directly and passing inicial config on constructor, or you can use `uAPI()` that use configs in 'config/ucoz-api.php'
+You can instance directly and passing inicial config on constructor, or you can use `uAPI()` that use configs in `config/ucoz-api.php`
 ```php
 $config = []; // overwrite inicial config from 'config/ucoz-api.php'
 // You can instace two ways:
@@ -54,7 +50,7 @@ $uapi = uAPI();
 ```
 
 #### Allowed methods
-The allowed methods are `get()`, `post()`, `put()` and `delete()`. You can use `getCached()`
+The allowed methods are `get()`, `post()`, `put()` and `delete()`. You can use `getCached()` too.
 ```php
 $uapi->get('/my')->toArray();
 uAPI()->get('/my')->toArray();
@@ -70,7 +66,7 @@ uAPI()->post('/blog', [
 ])->toString();
 ```
 
-#### Data convertion
+#### Data conversion
 You can use `toArray()`, `toJson()`, `toObject()`, `toString()`
 ```
 $deleted =  uAPI()->delete('/blog', [

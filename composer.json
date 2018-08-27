@@ -1,8 +1,9 @@
 {
     "name": "enniosousa/ucoz-api",
-    "description": "uCoz API for Laravel",
-    "keywords": ["ucoz", "api", "laravel"],
-    "type": "library",
+    "description": "Laravel uCoz API",
+    "keywords": ["ucoz", "api", "laravel", "uapi"],
+    "type": "package",
+    "version": "v1.0.0",
     "license": "MIT",
     "authors": [
         {

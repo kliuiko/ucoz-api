@@ -11,6 +11,12 @@
             "email": "ennio@enniosousa.com.br"
         }
     ],
+    "repositories": [
+    {
+        "type": "vcs",
+        "url":  "https://github.com/kliuiko/ucoz-api"
+    }
+    ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.0.0",

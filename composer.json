@@ -15,11 +15,5 @@
     "require": {
         "php": ">=7.0.0",
         "laravel/framework": "5.5.*|5.6.*|6.*.*"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "https://github.com/kliuiko/ucoz-api"
-        }
-    ]
+    }
 }
